@@ -17,9 +17,13 @@ module.exports = {
             } else {
                 return res.data.main.temp;
             }
-        }, function (res) {
-            // res.data.message is undefined? even though it shows on the JSON returned by the page?
-            // throw new Error(res.data.message);
+        }, function (err) {
+            // // res.data.message is undefined? even though it shows on the JSON returned by the page?
+            // // previously the function accepted res
+            // // throw new Error(res.data.message);
+            // later version of axios than used in the app setup passes err instead
+            // throw new Error(err.response.data.message);
+            /* ... but I like the error message showing the city name that was provided */
             throw new Error(`${location} not found`);
         });
     }
