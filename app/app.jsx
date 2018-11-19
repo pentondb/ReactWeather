@@ -13,7 +13,7 @@ require('style!css!foundation-sites/dist/css/foundation-float.min.css');
 $(document).foundation();
 
 // App CSS
-require('style!css!applicationStyles');
+require('style!css!sass!applicationStyles');
 
 ReactDOM.render(
   <Router history={hashHistory}>
